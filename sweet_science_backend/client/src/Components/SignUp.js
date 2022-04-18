@@ -37,8 +37,8 @@ function SignUp({ setUser }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
-        <label htmlFor="username">Username</label>
+        <h1>SIGNUP</h1>
+        <label htmlFor="username">U S E R N A M E</label>
         <input
           type="text"
           id="username"
@@ -46,7 +46,7 @@ function SignUp({ setUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">P A S S W O R D</label>
         <input
           type="password"
           id="password"
@@ -54,7 +54,9 @@ function SignUp({ setUser }) {
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="password">Password Confirmation</label>
+        <label htmlFor="password">
+          P A S S W O R D C O N F I R M A T I O N
+        </label>
         <input
           type="password"
           id="password_confirmation"
@@ -62,7 +64,7 @@ function SignUp({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">S I G N U P</button>
       </form>
     </div>
   );

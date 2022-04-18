@@ -14,7 +14,7 @@ function NavBar({ user, setUser }) {
     <header>
       <div>
         <Link className="navButton" to="/">
-          Home
+          H O M E
         </Link>
       </div>
       <div>
@@ -23,22 +23,22 @@ function NavBar({ user, setUser }) {
         ) : (
           <div>
             <Link className="navButton" to="/signup">
-              Signup
+              S I G N U P
             </Link>
             <Link className="navButton" to="/login">
-              Login
+              L O G I N
             </Link>
             <Link className="navButton" to="/boxer">
-              Boxer
+              B O X E R
             </Link>
             <Link className="navButton" to="/page">
-              Page
+              P A G E
             </Link>
             <Link className="navButton" to="/tutorial">
-              Tutorial
+              T U T O R I A L
             </Link>
             <Link className="navButton" to="/workout">
-              Workout
+              W O R K O U T
             </Link>
           </div>
         )}
