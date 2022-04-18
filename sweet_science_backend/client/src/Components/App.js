@@ -1,31 +1,63 @@
-import { useEffect,useState } from 'react'
-import {  Routes, Route, Link } from 'react-router-dom'
-import Home from './Home'
-import LogIn from './LogIn'
-import SignUp from './SignUp'
-import Tutorial from './Tutorial'
-import NavBar from './NavBar'
-import BoxerAccountPage from './BoxerAccountPage'
-import BoxerNews from './BoxerNews'
-import WorkoutLog from './WorkoutLog'
+import React, { useEffect, useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import SignUp from "./SignUp";
+import LogIn from "./LogIn";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import BoxerNews from "./BoxerNews";
+import BoxerAccountPage from "./BoxerAccountPage";
+import Tutorial from "./Tutorial";
+import WorkoutLog from "./WorkoutLog";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
-    <div className="App">
-     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Login" element={<LogIn />} />
-        <Route path="Signup" element={<SignUp />} />
-        <Route path="MyPage" element={<BoxerAccountPage />} />
-        <Route path="TheWork" element={<Tutorial />} />
-        <Route path="MyPage" element={<BoxerAccountPage />} />
-        <Route path="Workout-log" element={<WorkoutLog />} />
-
-
-
-
-      </Routes>
-    </div>
+    <>
+      <NavBar user={user} setUser={setUser} />
+      <main>
+        {user ? (
+          <Switch>
+            <Route path="/">
+              <Home user={user} />
+            </Route>
+          </Switch>
+        ) : (
+          <Switch>
+            <Route path="/signup">
+              <SignUp setUser={setUser} />
+            </Route>
+            <Route path="/login">
+              <LogIn setUser={setUser} />
+            </Route>
+            <Route path="/boxer">
+              <BoxerNews />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+            <Route path="/page">
+              <BoxerAccountPage />
+            </Route>
+            <Route path="/tutorial">
+              <Tutorial />
+            </Route>
+            <Route path="/workout">
+              <WorkoutLog />
+            </Route>
+          </Switch>
+        )}
+      </main>
+    </>
   );
 }
 

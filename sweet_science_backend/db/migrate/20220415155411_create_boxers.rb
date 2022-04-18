@@ -5,6 +5,8 @@ class CreateBoxers < ActiveRecord::Migration[7.0]
       t.integer :weight
       t.integer :experience
       t.string :image
+      t.string :password_digest
+      t.string :username
 
       t.timestamps
     end

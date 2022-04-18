@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function BoxerNews() {
   return (
-    <div>BoxerNews</div>
-  )
+    <div>
+      <h1>Boxer News</h1>
+    </div>
+  );
 }
 
-export default BoxerNews
+export default BoxerNews;
