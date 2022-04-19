@@ -5,11 +5,18 @@ def index
 end
 
 def show
-    render json: @boxer
+    boxer_id = session[:boxer_id]
+    if boxer_id
+        boxer = Boxer.find(boxer_id)
+        render json: @boxer, status: :created
+    else
+        render json: { error: "Unauthorized" }, status: :unauthorized
+    end
 end
 
 def create
     boxer=Boxer.create!(boxer_params) 
+    session[:boxer_id] ||=boxer.id
     render json: boxer, status: :created
 end
 
@@ -26,7 +33,7 @@ end
 
 private
 def boxer_params
-    params.permit(:name,:weight,:experience,:image)
+    params.permit(:name,:weight,:experience,:image,:username,:password,:password_confirmation)
 end
 
 def find_boxer
