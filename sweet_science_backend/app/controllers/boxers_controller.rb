@@ -16,8 +16,11 @@ end
 
 def create
     boxer=Boxer.create!(boxer_params) 
-    session[:boxer_id] ||=boxer.id
+    session[:boxer_id] =boxer.id
     render json: boxer, status: :created
+    rescue ActiveRecord::RecordInvalid => invalid
+    puts "test"
+    render json: {errors: invalid.record.errors.full_messages}
 end
 
 def update

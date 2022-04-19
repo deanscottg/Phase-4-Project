@@ -9,11 +9,11 @@ Boxer.destroy_all
 Workout.destroy_all
 Drill.destroy_all
 puts "Seeded"
-b1=Boxer.create(name:"Canelo",weight:168,experience:5,image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg3MDA4NjI3Mjk3NDk0MDI3/canelo-alvarez-mannix.jpg")
-b2=Boxer.create(name:"Terrance",weight:147,experience:4,image:"https://imageio.forbes.com/specials-images/imageserve/5dcc5f84e0af7b0006b1404d/Terence-Crawford-v-Jeff-Horn/960x0.jpg?fit=bounds&format=jpg&width=960")
-b3=Boxer.create(name:"Charles",weight:265,experience:1,image:"https://thespun.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-24-at-10.04.04-PM-775x465.png")
-b4=Boxer.create(name:"Tom",weight:141,experience:3,image:"https://i.insider.com/6196a6eaa2e68800198aee1a?width=700")
-b5=Boxer.create(name:"Michael B",weight:184,experience:3,image:"https://static.wikia.nocookie.net/fnl/images/2/2e/Michael_B_Jordan.png/revision/latest/top-crop/width/360/height/450?cb=20220311011518")
+b1=Boxer.create(name:"Canelo",username:"calvarez",password:"ccccc",weight:168,experience:5,image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg3MDA4NjI3Mjk3NDk0MDI3/canelo-alvarez-mannix.jpg")
+b2=Boxer.create(name:"Terrance",username:"tcrawford",password:"ttttt",weight:147,experience:4,image:"https://imageio.forbes.com/specials-images/imageserve/5dcc5f84e0af7b0006b1404d/Terence-Crawford-v-Jeff-Horn/960x0.jpg?fit=bounds&format=jpg&width=960")
+b3=Boxer.create(name:"Charles",username:"cbarkley",password:"bbbbb",weight:265,experience:1,image:"https://thespun.com/wp-content/uploads/2020/09/Screen-Shot-2020-09-24-at-10.04.04-PM-775x465.png")
+b4=Boxer.create(name:"Tom",username:"tholland",password:"hhhhh",weight:141,experience:3,image:"https://i.insider.com/6196a6eaa2e68800198aee1a?width=700")
+b5=Boxer.create(name:"Michael B",username:"mjordan",password:"mmmmm",weight:184,experience:3,image:"https://static.wikia.nocookie.net/fnl/images/2/2e/Michael_B_Jordan.png/revision/latest/top-crop/width/360/height/450?cb=20220311011518")
 
 
 
