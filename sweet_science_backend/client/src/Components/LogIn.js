@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// function LogIn() {
-//   return (
-//     <div>LogIn</div>
-//   )
-// }
-
-// export default LogIn
-
 import React, { useState } from "react";
 
 function Login({ setUser }) {
