@@ -20,7 +20,7 @@ function Home({ user }) {
           textShadow: "2px 2px brown",
         }}
       >
-        PLEASE LOGIN OR SIGN UP
+        STOP BEING LAZY, TIME TO GET TO WORK!
       </h1>
     );
   }

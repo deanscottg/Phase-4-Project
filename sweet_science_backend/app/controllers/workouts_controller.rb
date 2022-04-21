@@ -4,8 +4,13 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-        workout = Workout.create!(workout_params)
+        workout= Workout.create!(workout_params) 
+        session[:workout_id] = workout.id
         render json: workout, status: :created
+        rescue ActiveRecord::RecordInvalid => invalid
+        render json: {errors: invalid.record.errors.full_messages}
+    end
+        
     end
 
     private 

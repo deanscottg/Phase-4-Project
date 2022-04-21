@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :workouts, only:[:index,:show]
+  resources :workouts, only:[:index,:show,:create]
   resources :drills, only:[:index]
   resources :boxers
+  get "/me", to: "boxers#show"
   post'/signup', to: "boxers#create"
   post'/login', to: "sessions#create"
   delete'/logout', to:"sessions#destroy"
+  post'/workout', to:"workouts#create"
 end

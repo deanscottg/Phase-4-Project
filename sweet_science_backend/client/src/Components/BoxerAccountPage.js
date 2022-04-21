@@ -9,7 +9,7 @@ const BoxerAccountPage = ({ match }) => {
 
   return (
     <div>
-      <BoxerCard id={match.params.id}></BoxerCard>
+      <BoxerCard key={match.params.id} id={match.params.id}></BoxerCard>
     </div>
   );
 };

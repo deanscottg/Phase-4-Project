@@ -21,12 +21,12 @@ function App() {
     });
   }, []);
 
-  console.log(user, "Check");
+  
   const isLoggedIn = !!user;
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      <NavBar user={user} setBoxer={setUser} />
       <main>
         <Switch>
           {isLoggedIn ? (
@@ -45,7 +45,7 @@ function App() {
                 <Tutorial />
               </Route>
               <Route path="/workout">
-                <WorkoutLog />
+                <WorkoutLog user={user} setUser={setUser} />
               </Route>
               <Route exact path="/">
                 <Home />
