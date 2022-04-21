@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 function BoxerCard({ id }) {
     const [currentBoxer, setCurrentBoxer]= useState({})
     useEffect(() =>
-    fetch(`http://localhost:3000/boxers/${id}`)
+    fetch(`/boxers/${id}`)
     .then((response) =>response.json())
     // .then(boxerData => console.log(boxerData))
     .then(boxerData => setCurrentBoxer(boxerData))
