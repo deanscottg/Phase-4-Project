@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch("http://localhost:3000/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
@@ -18,20 +18,27 @@ function NavBar({ user, setUser }) {
         </Link>
       </div>
       <div>
-        {user ? (
-          <button onClick={handleLogoutClick}>Logout</button>
-        ) : (
+
           <div>
-            <Link className="navButton" to="/signup">
+            
+            {user ? (
+              <button onClick={handleLogoutClick}>Logout</button>
+            ) :(
+              <>
+              <Link className="navButton" to="/signup">
               S I G N U P
             </Link>
-            <Link className="navButton" to="/login">
+              <Link className="navButton" to="/login">
               L O G I N
             </Link>
+              </>
+
+            
+            )}
             <Link className="navButton" to="/boxer">
               B O X E R
             </Link>
-            <Link className="navButton" to="/page">
+            <Link className="navButton" to={`/boxers/${user?.id}`}>
               P A G E
             </Link>
             <Link className="navButton" to="/tutorial">
@@ -41,7 +48,6 @@ function NavBar({ user, setUser }) {
               W O R K O U T
             </Link>
           </div>
-        )}
       </div>
     </header>
   );

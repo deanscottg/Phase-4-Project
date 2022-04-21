@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import NavBar from "./NavBar";
@@ -21,31 +21,26 @@ function App() {
     });
   }, []);
 
+  console.log(user, "Check")
+  const isLoggedIn = !!user;
+
+
   return (
     <>
       <NavBar user={user} setUser={setUser} />
       <main>
-        {user ? (
-          <Switch>
+        <Switch>
+
+        {isLoggedIn ? (
+          <>
             <Route path="/">
               <Home user={user} />
             </Route>
-          </Switch>
-        ) : (
-          <Switch>
-            <Route path="/signup">
-              <SignUp setUser={setUser} />
-            </Route>
-            <Route path="/login">
-              <LogIn setUser={setUser} />
-            </Route>
-            <Route path="/boxer">
+            <Route path="/boxingnews">
               <BoxerNews />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-            <Route path="/page">
+            
+            <Route path="/boxers/:id">
               <BoxerAccountPage />
             </Route>
             <Route path="/tutorial">
@@ -54,8 +49,23 @@ function App() {
             <Route path="/workout">
               <WorkoutLog />
             </Route>
-          </Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </>
+        ) : (
+          <>
+            <Route path="/signup">
+              <SignUp setUser={setUser} />
+            </Route>
+            <Route path="/login">
+              <LogIn setUser={setUser} />
+            </Route>
+            
+          </>
         )}
+        </Switch>
+
       </main>
     </>
   );
