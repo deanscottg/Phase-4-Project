@@ -1,11 +1,17 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import BoxerCard from "./BoxerCard";
+import { useParams, withRouter } from "react-router-dom";
+const BoxerAccountPage = ({ match }) => {
+  // const { poop } = useParams();
+  // const [poop, setPoop] = useState('fuck')
+  console.log({ match });
 
-function BoxerAccountPage() {
   return (
     <div>
-      <h1>BoxerAccountPage</h1>
+      <BoxerCard id={match.params.id}></BoxerCard>
     </div>
   );
-}
+};
 
-export default BoxerAccountPage;
+export default withRouter(BoxerAccountPage);

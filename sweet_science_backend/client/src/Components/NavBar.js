@@ -18,32 +18,34 @@ function NavBar({ user, setUser }) {
         </Link>
       </div>
       <div>
-        {user ? (
-          <button className="logoutButton" onClick={handleLogoutClick}>
-            L O G O U T
-          </button>
-        ) : (
-          <div>
-            <Link className="navButton" to="/signup">
-              S I G N U P
-            </Link>
-            <Link className="navButton" to="/login">
-              L O G I N
-            </Link>
-            <Link className="navButton" to="/boxer">
-              N E W S
-            </Link>
-            <Link className="navButton" to="/page">
-              P A G E
-            </Link>
-            <Link className="navButton" to="/tutorial">
-              T U T O R I A L
-            </Link>
-            <Link className="navButton" to="/workout">
-              W O R K O U T
-            </Link>
-          </div>
-        )}
+        <div>
+          {user ? (
+            <button className="logoutButton" onClick={handleLogoutClick}>
+              L O G O U T
+            </button>
+          ) : (
+            <>
+              <Link className="navButton" to="/signup">
+                S I G N U P
+              </Link>
+              <Link className="navButton" to="/login">
+                L O G I N
+              </Link>
+            </>
+          )}
+          <Link className="navButton" to="/boxingnews">
+            N E W S
+          </Link>
+          <Link className="navButton" to={`/boxers/${user?.id}`}>
+            P A G E
+          </Link>
+          <Link className="navButton" to="/tutorial">
+            T U T O R I A L
+          </Link>
+          <Link className="navButton" to="/workout">
+            W O R K O U T
+          </Link>
+        </div>
       </div>
     </header>
   );
