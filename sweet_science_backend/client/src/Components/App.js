@@ -42,7 +42,7 @@ function App() {
             <Route path="/boxer">
               <BoxerNews />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/page">
