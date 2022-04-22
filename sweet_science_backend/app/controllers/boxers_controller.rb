@@ -1,10 +1,9 @@
 class BoxersController < ApplicationController
-before_action :find_boxer, only: [:show,:update,:destroy]
+before_action :find_boxer, only: [:update,:destroy]
+
 def index
     render json: Boxer.all
 end
-
-
 
 def create
     boxer=Boxer.create!(boxer_params) 
@@ -15,25 +14,13 @@ def create
 end
 def show
     boxer = Boxer.find_by(id: session[:boxer_id])
-    if 
-      render json: boxer
+    if boxer
+    render json: boxer
     else
-      render json: { error: "Not authorized" }, status: :unauthorized
+    render json: { error: "Not authorized" }, status: :unauthorized
     end
-  end
+end
 
-# def show
-#     boxer = Boxer.find(params[:id])
-#     # render json: boxer, status: :created
-#     boxer_id = session[:boxer_id]
-#     if
-#     boxer_id
-#         @boxer = Boxer.find(boxer_id)
-#         render json: @boxer, status: :created
-#     else
-#         render json: { error: "Unauthorized" }, status: :unauthorized
-#     end
-# end
 def update
     @boxer.update!(boxer_params)
     render json: @boxer, status: :accepted

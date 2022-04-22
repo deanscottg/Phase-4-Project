@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import NavBar from "./NavBar";
@@ -21,12 +21,11 @@ function App() {
     });
   }, []);
 
-  
   const isLoggedIn = !!user;
 
   return (
     <>
-      <NavBar user={user} setBoxer={setUser} />
+      <NavBar user={user} setUser={setUser} />
       <main>
         <Switch>
           {isLoggedIn ? (

@@ -1,48 +1,80 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
-
+import React from "react";
+import { useState, useEffect } from "react";
 
 function BoxerCard({ id }) {
-    const [currentBoxer, setCurrentBoxer]= useState({})
-    const [currentBoxerWorkouts, setCurrentBoxerWorkouts]=useState([])
-    useEffect(() =>
-    fetch(`/boxers/${id}`)
-    .then((response) =>response.json())
-    // .then(boxerData => console.log(boxerData))
-    .then(boxerData => {
-        setCurrentBoxer(boxerData)
-        setCurrentBoxerWorkouts(boxerData.workouts)
-    })
-    ,[])
-    // .then(setCurrentBoxerWorkouts(currentBoxer.workouts))
+  const [currentBoxer, setCurrentBoxer] = useState({});
+  const [currentBoxerWorkouts, setCurrentBoxerWorkouts] = useState([]);
+  useEffect(
+    () =>
+      fetch(`/boxers/${id}`)
+        .then((response) => response.json())
+        .then((boxerData) => {
+          setCurrentBoxer(boxerData);
+          setCurrentBoxerWorkouts(boxerData.workouts);
+        }),
+    []
+  );
 
-    // const boxerWorkouts = currentBoxer["workouts"].map(workout=>{
-    //     console.log(workout)
-
-    // console.log(boxerWorkouts,"meh")
-//    console.log(currentBoxer,"g")
-//     console.log(currentBoxer.workouts.map(work=> console.log(work)))
-    // console.log(currentBoxer.workouts,"checkn workouts")
-    console.log(currentBoxerWorkouts,"a")
+  console.log(currentBoxerWorkouts, "a");
   return (
-      
     <div className="boxer-container">
-        <img alt="{currentBoxer.name}" src={currentBoxer.image}></img>
-        <h1>Boxer name: {currentBoxer.name}</h1>
-        <h2>Experience level: {currentBoxer.experience}</h2>
-        <h3>Weight: {currentBoxer.weight}</h3>
-        <div className="boxer-workouts">
-        {currentBoxerWorkouts.map((boxerWorkout) => { 
-        return(
+      <img alt="{currentBoxer.name}" src={currentBoxer.image}></img>
+      <h1
+        style={{
+          color: "#FFBF00",
+          fontFamily: "Games",
+          textShadow: "2px 2px brown",
+        }}
+      >
+        Boxer name: {currentBoxer.name}
+      </h1>
+      <h2
+        style={{
+          color: "#FFBF00",
+          fontFamily: "Games",
+          textShadow: "2px 2px brown",
+        }}
+      >
+        Experience level: {currentBoxer.experience}
+      </h2>
+      <h3
+        style={{
+          color: "#FFBF00",
+          fontFamily: "Games",
+          textShadow: "2px 2px brown",
+        }}
+      >
+        Weight: {currentBoxer.weight}
+      </h3>
+      <div className="boxer-workouts">
+        {currentBoxerWorkouts.map((boxerWorkout) => {
+          return (
             <div>
-            <p>{boxerWorkout.date}</p>
-            <p>{boxerWorkout.drill_id} Completion level:{boxerWorkout.completion_level} </p>
-            </div>  
-        )})}
-        </div>
-
+              <p
+                style={{
+                  color: "#FFBF00",
+                  fontFamily: "Games",
+                  textShadow: "2px 2px brown",
+                }}
+              >
+                {boxerWorkout.date}
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "Games",
+                  textShadow: "2px 2px brown",
+                }}
+              >
+                {boxerWorkout.drill_id} Completion level:
+                {boxerWorkout.completion_level}{" "}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
-export default BoxerCard
+export default BoxerCard;

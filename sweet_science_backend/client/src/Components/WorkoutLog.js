@@ -1,39 +1,38 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
+function WorkoutLog({ user, setUser }) {
+  const [workout, setWorkout] = useState([]);
+  const [drill, setDrill] = useState(9);
+  const [rounds, setRounds] = useState(0);
+  const [completionLevel, setCompletionLevel] = useState(1);
+  const [date, setDate] = useState("");
 
-function WorkoutLog({user, setUser}) {
-const [workout, setWorkout]=useState([])
-const [drill, setDrill]=useState(9)
-const [rounds,setRounds]=useState(0)
-const [completionLevel, setCompletionLevel]=useState(1)
-const [date, setDate]= useState("")
-
-function handleSubmit(e) {
-  e.preventDefault();
-  fetch("/workout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      drill_id: drill,
-      rounds: rounds,
-      completion_level:completionLevel,
-      date: date,
-      boxer_id: user.id
-    }),
-  }).then((r) => {
-    if (r.ok) {
-      r.json().then((workout) => setWorkout(workout));
-    }
-  });
-  console.log(user.id, "check")
-}
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("/workout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        drill_id: drill,
+        rounds: rounds,
+        completion_level: completionLevel,
+        date: date,
+        boxer_id: user.id,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((workout) => setWorkout(workout));
+      }
+    });
+    console.log(user.id, "check");
+  }
   return (
-  <div>
-    <form onSubmit={handleSubmit}>
+    <div>
+      <form onSubmit={handleSubmit}>
         <h1>LETS GET TO WORK</h1>
-        <p>Submit your latest workout</p>
+        <p>SUBMIT YOUR LATEST WORKOUT</p>
         <label htmlFor="Drill">D R I L L</label>
         <select
           name="dropdown"
@@ -59,7 +58,7 @@ function handleSubmit(e) {
           onChange={(e) => setRounds(e.target.value)}
         />
 
-<label htmlFor="Date">D A T E</label>
+        <label htmlFor="Date">D A T E</label>
         <input
           type="date"
           id="Date"
@@ -68,7 +67,7 @@ function handleSubmit(e) {
           onChange={(e) => setDate(e.target.value)}
         />
 
-<label htmlFor="Completion level">C O M P L E T I O N</label>
+        <label htmlFor="Completion level">C O M P L E T I O N</label>
         <select
           name="dropdown"
           value={completionLevel}
@@ -83,8 +82,8 @@ function handleSubmit(e) {
 
         <button type="submit">L O G</button>
       </form>
-  </div>
-  )
+    </div>
+  );
 }
 
-export default WorkoutLog
+export default WorkoutLog;
