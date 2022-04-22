@@ -22,8 +22,11 @@ def show
 end
 
 def update
-    @boxer.update!(boxer_params)
+    boxer = Boxer.find(params[:id])
+    if boxer
+    boxer.update(experience: params[:experience])
     render json: @boxer, status: :accepted
+    end
 end
 
 def destroy
