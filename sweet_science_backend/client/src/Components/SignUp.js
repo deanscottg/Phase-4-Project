@@ -4,12 +4,11 @@ function SignUp({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [name, setName]= useState("");
-  const [weight,setWeight] = useState(0);
-  const [experience, setExperience]= useState(1)
-  const [image, setImage] = useState("")
- console.log(experience)
-
+  const [name, setName] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [experience, setExperience] = useState(1);
+  const [image, setImage] = useState("");
+  console.log(experience);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,8 +19,8 @@ function SignUp({ setUser }) {
       },
       body: JSON.stringify({
         name: name,
-        username:username,
-        password:password,
+        username: username,
+        password: password,
         password_confirmation: passwordConfirmation,
         weight: weight,
         image: image,
@@ -72,7 +71,7 @@ function SignUp({ setUser }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-         <label htmlFor="Image">I M A G E</label>
+        <label htmlFor="Image">I M A G E</label>
         <input
           type="text"
           id="Image"
@@ -89,17 +88,19 @@ function SignUp({ setUser }) {
           onChange={(e) => setWeight(e.target.value)}
         />
         <label htmlFor="Experience">E X P E R I E N C E</label>
-        <select name = "dropdown" value={experience}
-            onChange={(e) => setExperience(e.target.value)}>
-            <option value = "1">1 (Zero ring experience)</option>
-            <option value = "2">2 (Amateur)</option>
-            <option value = "3">3 (Up and Coming challenger)</option>
-            <option value = "4">4 (Title Contender)</option>
-            <option value = "5">5 (Champ)</option>
-         </select>
-       
-    
-        <button  type="submit">S I G N U P</button>
+        <select
+          name="dropdown"
+          value={experience}
+          onChange={(e) => setExperience(e.target.value)}
+        >
+          <option value="1">1 (Zero ring experience)</option>
+          <option value="2">2 (Amateur)</option>
+          <option value="3">3 (Up and Coming challenger)</option>
+          <option value="4">4 (Title Contender)</option>
+          <option value="5">5 (Champ)</option>
+        </select>
+
+        <button type="submit">S I G N U P</button>
       </form>
     </div>
   );

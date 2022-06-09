@@ -5,7 +5,7 @@ function BoxerNews() {
     const anchor = document.createElement("a");
     anchor.setAttribute("class", "twitter-timeline");
     anchor.setAttribute("data-theme", "dark");
-    anchor.setAttribute("data-tweet-limit", "unlimitted");
+    anchor.setAttribute("data-tweet-limit", "unlimited");
     anchor.setAttribute("data-chrome", "noheader nofooter noborders");
     anchor.setAttribute("data-height", "800");
     anchor.setAttribute("data-width", "750");

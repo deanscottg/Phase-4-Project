@@ -26,7 +26,7 @@ function WorkoutLog({ user, setUser }) {
         r.json().then((workout) => setWorkout(workout));
       }
     });
-    console.log(user.id, "check");
+    setUser(user.id, "check");
   }
   return (
     <div>

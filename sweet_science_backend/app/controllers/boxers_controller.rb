@@ -30,8 +30,13 @@ def update
 end
 
 def destroy
-    render json: @boxer
-    header :no_content
+    boxer = Boxer.find_by(id: params[:id])
+    if boxer
+        boxer.destroy
+    head :no_content
+    else 
+        render json: { error: "10th Round Knockout"}, status: :not_found
+    end
 end
 
 

@@ -23,9 +23,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/qUsz-zqmQ8c"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -58,9 +58,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/xPbmy5wNj4s"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -93,9 +93,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/K6pY2r2_CoM"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -127,9 +127,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/i12A6G_LiJo"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -160,9 +160,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/MP0VSOFl-eI"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -193,9 +193,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/6fxzJVMgUno"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -228,9 +228,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/V0DIFJKD_pg"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"
@@ -262,9 +262,9 @@ function Tutorial() {
       </h1>
       <iframe
         src="https://www.youtube.com/embed/ruh7qPQqktE"
-        frameborder="10"
+        frameBorder="10"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullScreen
         title="video"
         height="250"
         width="500"

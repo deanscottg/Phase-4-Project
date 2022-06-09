@@ -5,17 +5,15 @@ function BoxerCard({ id }) {
   const [currentBoxer, setCurrentBoxer] = useState({});
   const [currentBoxerWorkouts, setCurrentBoxerWorkouts] = useState([]);
   const [newExperience, setNewExperience] = useState(1);
-  useEffect(
-    () =>
-      fetch(`/boxers/${id}`)
-        .then((response) => response.json())
-        // .then(boxerData => console.log(boxerData))
-        .then((boxerData) => {
-          setCurrentBoxer(boxerData);
-          setCurrentBoxerWorkouts(boxerData.workouts);
-        }),
-    []
-  );
+
+  useEffect(() => {
+    fetch(`/boxers/${id}`)
+      .then((response) => response.json())
+      .then((boxerData) => {
+        setCurrentBoxer(boxerData);
+        setCurrentBoxerWorkouts(boxerData.workouts);
+      });
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,12 +31,16 @@ function BoxerCard({ id }) {
       }
     });
   }
-  // .then(setCurrentBoxerWorkouts(currentBoxer.workouts))
 
-  // console.log(currentBoxerWorkouts, "a");
+  function handleDelete() {
+    fetch(`/boxers/${id}`, {
+      method: "DELETE",
+    });
+  }
+
   return (
     <div className="boxer-container">
-      <img alt="{currentBoxer.name}" src={currentBoxer.image}></img>
+      <img alt={currentBoxer.name} src={currentBoxer.image}></img>
       <h1
         style={{
           color: "#FFBF00",
@@ -94,7 +96,7 @@ function BoxerCard({ id }) {
         })}
       </div>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form className="experience-level-form" onSubmit={handleSubmit}>
           <label htmlFor="Experience">E X P E R I E N C E</label>
           <select
             name="dropdown"
@@ -110,7 +112,11 @@ function BoxerCard({ id }) {
           <button type="submit">L E V E L U P</button>
         </form>
       </div>
-      ;
+      <div>
+        <button className="delete-btn" onClick={handleDelete} type="submit">
+          QUIT, REALLY?
+        </button>
+      </div>
     </div>
   );
 }
