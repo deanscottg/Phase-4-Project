@@ -7,7 +7,7 @@ function WorkoutLog({ user, setUser }) {
   const [completionLevel, setCompletionLevel] = useState(1);
   const [date, setDate] = useState("");
 
-  function handleSubmit(e) {
+  function handleWorkoutLog(e) {
     e.preventDefault();
     fetch("/workout", {
       method: "POST",
@@ -30,7 +30,7 @@ function WorkoutLog({ user, setUser }) {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleWorkoutLog}>
         <h1>LETS GET TO WORK</h1>
         <p>SUBMIT YOUR LATEST WORKOUT</p>
         <label htmlFor="Drill">D R I L L</label>

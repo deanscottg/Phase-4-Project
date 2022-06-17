@@ -17,6 +17,7 @@ function BoxerCard({ id }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     fetch(`/boxers/${id}`, {
       method: "PATCH",
       headers: {
@@ -29,7 +30,7 @@ function BoxerCard({ id }) {
       if (r.ok) {
         r.json().then((newExperience) => setNewExperience(newExperience));
       }
-    });
+    }, []);
   }
 
   function handleDelete() {
@@ -95,8 +96,8 @@ function BoxerCard({ id }) {
           );
         })}
       </div>
-      <div>
-        <form className="experience-level-form" onSubmit={handleSubmit}>
+      <div className="experience-level-form">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="Experience">E X P E R I E N C E</label>
           <select
             name="dropdown"

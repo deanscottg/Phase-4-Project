@@ -21,7 +21,11 @@ function Home({ user }) {
         }}
       >
         STOP BEING LAZY, TIME TO GET TO WORK!
-        <img src="https://images.squarespace-cdn.com/content/v1/6092af110d26e274e108d8cd/1620227355435-PAVG0XZR8FWCMYXSALIS/Sweet-Science-Boxing-Gym-Logo-PDF.png"></img>
+        <img
+          className="home-image"
+          src="https://images.squarespace-cdn.com/content/v1/6092af110d26e274e108d8cd/1620227355435-PAVG0XZR8FWCMYXSALIS/Sweet-Science-Boxing-Gym-Logo-PDF.png"
+          alt="Sweet Science logo"
+        ></img>
       </h1>
     );
   }

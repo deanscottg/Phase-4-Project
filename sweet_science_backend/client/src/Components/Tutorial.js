@@ -8,6 +8,8 @@ import { GiBoxingGlove } from "react-icons/gi";
 import { GiBoxingRing } from "react-icons/gi";
 import { GiThrowingBall } from "react-icons/gi";
 
+import "./Tutorial.css";
+
 function Tutorial() {
   return (
     <div className="videos">

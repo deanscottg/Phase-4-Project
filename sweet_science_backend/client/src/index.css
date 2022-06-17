@@ -145,11 +145,28 @@ form button[type="submit"] {
 
 .experience-level-form {
   align-items: center;
-  margin-left: 2px;
-  margin-top: 20px;
-  margin-bottom: 23px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .twitterContainer {
   margin-left: 50px;
+}
+
+.boxer-pic {
+  text-align: center;
+}
+
+.boxer-form {
+  align-self: center;
+  width: 100%;
+}
+
+.experience-level-form > form > label {
+  padding: 10px;
+  text-align: center;
+}
+
+.home-image {
+  width: 80%;
 }

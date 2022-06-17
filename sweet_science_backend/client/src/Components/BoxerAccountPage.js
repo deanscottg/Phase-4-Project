@@ -6,7 +6,7 @@ const BoxerAccountPage = ({ match }) => {
   console.log({ match });
 
   return (
-    <div>
+    <div className="boxer-pic">
       <BoxerCard key={match.params.id} id={match.params.id} />
     </div>
   );
